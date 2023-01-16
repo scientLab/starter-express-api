@@ -332,6 +332,20 @@ app.post("/webhook", (request, response) => {
         console.log(jsonResponse);
         response.json(jsonResponse);
       });
+  } else if (tag == "test") {
+    jsonResponse = {
+      fulfillment_response: {
+        messages: [
+          {
+            text: {
+              //fulfillment text response to be sent to the agent
+              text: [`Are you the policyholder rakesh?`],
+            },
+          },
+        ],
+      },
+    };
+    response.json(jsonResponse);
   }
 
   //console.log(jsonResponse)
