@@ -5,6 +5,9 @@ const { DateTime } = require("luxon");
 const app = express();
 
 app.use(express.json());
+const port = process.env.port || 3000;
+app.use(express.urlencoded({ extended: true }));
+
 app.get("/", (req, res) => {
   console.log("Just got a request!");
   res.send("Yo!ffdf");
@@ -350,7 +353,14 @@ app.post("/webhook", (request, response) => {
 
   //console.log(jsonResponse)
 });
-app.post("/test", (request, response) => {
-  response.json({ hi: 234 });
+app.get("/test", (request, response) => {
+  response.send("Yo! Hello");
 });
-app.listen(process.env.PORT || 3000);
+app.post("/login", function (req, res) {
+  console.log("test");
+  res.end(); // end the response
+});
+//app.listen(process.env.PORT || 3000);
+app.listen(port, () => {
+  console.log(`Listening on port ${port}`);
+});
