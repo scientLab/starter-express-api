@@ -350,4 +350,7 @@ app.post("/webhook", (request, response) => {
 
   //console.log(jsonResponse)
 });
+app.post("/test", (request, response) => {
+  response.json({ hi: 234 });
+});
 app.listen(process.env.PORT || 3000);
