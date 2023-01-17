@@ -27,7 +27,7 @@ app.post("/webhook", (request, response) => {
     mobile_number = mobile_number.replace(/\s+/g, "");
     var config = {
       method: "get",
-      url: `https://ec2-3-236-245-181.compute-1.amazonaws.com/VoiceBotIntegration/GetAutoPolicyHolderByPhoneNumber/${mobile_number}`,
+      url: `http://ec2-3-236-245-181.compute-1.amazonaws.com/VoiceBotIntegration/GetAutoPolicyHolderByPhoneNumber/${mobile_number}`,
       //9900121212
       headers: {
         Authorization: "Basic ZWlxdXNlcjpFIXFVczNyQDEyMw==",
@@ -166,7 +166,7 @@ app.post("/webhook", (request, response) => {
 
     var config = {
       method: "get",
-      url: "https://ec2-3-236-245-181.compute-1.amazonaws.com/VoiceBotIntegration/GetPolicyExpenseDetails",
+      url: "http://ec2-3-236-245-181.compute-1.amazonaws.com/VoiceBotIntegration/GetPolicyExpenseDetails",
       headers: {
         Authorization: "Basic ZWlxdXNlcjpFIXFVczNyQDEyMw==",
         "Content-Type": "application/json",
@@ -218,7 +218,7 @@ app.post("/webhook", (request, response) => {
     let lodgeClaimID = request.body.sessionInfo.parameters.lodgeClaimID;
     var config = {
       method: "post",
-      url: `https://ec2-3-236-245-181.compute-1.amazonaws.com/VoiceBotIntegration/GenerateClaim/${lodgeClaimID}`,
+      url: `http://ec2-3-236-245-181.compute-1.amazonaws.com/VoiceBotIntegration/GenerateClaim/${lodgeClaimID}`,
       headers: {
         Authorization: "Basic ZWlxdXNlcjpFIXFVczNyQDEyMw==",
       },
@@ -281,7 +281,7 @@ app.post("/webhook", (request, response) => {
     let lodgeClaimID = request.body.sessionInfo.parameters.lodgeClaimID;
     var config = {
       method: "post",
-      url: `https://ec2-3-236-245-181.compute-1.amazonaws.com/VoiceBotIntegration/BookAutoGarage/${lodgeClaimID}`,
+      url: `http://ec2-3-236-245-181.compute-1.amazonaws.com/VoiceBotIntegration/BookAutoGarage/${lodgeClaimID}`,
       headers: {
         Authorization: "Basic ZWlxdXNlcjpFIXFVczNyQDEyMw==",
       },
